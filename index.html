@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Computer Vision Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rock Paper Scissors</h1>
+            <p>Play against the computer using hand gestures!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="player-section">
+                <h2>Your Move</h2>
+                <div class="video-container">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas"></canvas>
+                </div>
+                <div class="gesture-display" id="player-gesture">
+                    <span>Waiting for gesture...</span>
+                </div>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="computer-section">
+                <h2>Computer</h2>
+                <div class="computer-display" id="computer-gesture">
+                    <span>?</span>
+                </div>
+                <div class="gesture-display">
+                    <span id="computer-move">Waiting...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-display" id="result">
+                Make your move!
+            </div>
+            <div class="score-board">
+                <div class="score">
+                    <span>Player: </span>
+                    <span id="player-score">0</span>
+                </div>
+                <div class="score">
+                    <span>Computer: </span>
+                    <span id="computer-score">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-camera">Start Camera</button>
+            <button id="play-round">Play Round</button>
+            <button id="reset-game">Reset Game</button>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Rock: Make a fist</li>
+                <li>Paper: Open your hand, fingers together</li>
+                <li>Scissors: Extend your index and middle fingers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Load TensorFlow.js and Handpose model -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose@0.0.7"></script>
+    <script src="script.js"></script>
+</body>
+</html>
